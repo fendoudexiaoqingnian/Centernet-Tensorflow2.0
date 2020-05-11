@@ -84,12 +84,12 @@ def HourglassNetwork(heads, num_stacks, cnv_dim=256, inres=(512, 512), weights='
 
   model = Model(inputs=input_layer, outputs=outputs)
   if weights == 'ctdet_coco':
-    weights_path = get_file(
-      '%s_hg.hdf5' % weights,
-      CTDET_COCO_WEIGHTS_PATH,
-      cache_subdir='models',
-      file_hash='ce01e92f75b533e3ff8e396c76d55d97ff3ec27e99b1bdac1d7b0d6dcf5d90eb')
-    model.load_weights(weights_path)
+    # weights_path = get_file(
+    #   '%s_hg.hdf5' % weights,
+    #   CTDET_COCO_WEIGHTS_PATH,
+    #   cache_subdir='models',
+    #   file_hash='ce01e92f75b533e3ff8e396c76d55d97ff3ec27e99b1bdac1d7b0d6dcf5d90eb')
+    model.load_weights('D:\研一下\仓库\Centernet-Tensorflow2.0\TF2-CenterNet\ctdet_coco_hg.hdf5')
   elif weights == 'hpdet_coco':
     weights_path = get_file(
       '%s_hg.hdf5' % weights,
