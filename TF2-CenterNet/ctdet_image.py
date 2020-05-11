@@ -35,8 +35,10 @@ def main():
   model = CtDetDecode(model)
   drawer = COCODrawer()
   fns = sorted(glob(args.fn))
+  print(fns)
   for fn in tqdm(fns):
     img = cv2.imread(fn)
+    # cv2.imshow(img)
     letterbox_transformer = LetterboxTransformer(args.inres[0], args.inres[1])
     pimg = letterbox_transformer(img)
     pimg = normalize_image(pimg)
